@@ -26,12 +26,12 @@ namespace Data.Mappings
             builder.Property(p => p.TipoCadastro)
                     .IsRequired();
 
-            builder.ToTable("Agencias");
+            //builder.ToTable("Agencias");
 
             // 1 : N =>
             builder.HasMany(f => f.Usuario)
-               .WithOne(p => p.Agencia)
-               .HasForeignKey(prop => prop.IdAgencia);
+               .WithOne(p => p.Organizacao)
+               .HasForeignKey(prop => prop.IdOrganizacao);
 
 
             builder.HasOne(f => f.Empresa)

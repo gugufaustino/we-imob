@@ -40,9 +40,9 @@ namespace Data.Mappings
             builder.Property(p => p.TipoCadastro)
                      .IsRequired();
 
-            builder.Property(p => p.IdAgencia);
+            builder.Property(p => p.IdOrganizacao);
 
-            builder.ToTable("Usuarios");
+            //builder.ToTable("Usuarios");
  
             
             //Convesão: Na classe que possui as filhas que se configura o relacionamento. Exempo:

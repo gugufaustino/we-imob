@@ -31,7 +31,7 @@ namespace Data.Mappings
                     .IsRequired()
                     .HasColumnType("varchar(250)");
 
-            builder.ToTable("AgenciasEmpresa"); 
+            //builder.ToTable("AgenciasEmpresa"); 
 
 
         }
