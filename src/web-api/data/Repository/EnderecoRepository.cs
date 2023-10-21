@@ -19,13 +19,13 @@ namespace Data.Repository
   
         public async override Task<List<Endereco>> ListarTodos()
         {
-            return await Db.Enderecos.AsNoTracking()                            
+            return await Db.Endereco.AsNoTracking()                            
                             .ToListAsync();
         }
 
         public async override Task<Endereco> ObterPorId(int id)
         {
-            return await Db.Enderecos
+            return await Db.Endereco
                             .FirstAsync(i => i.Id == id);
         }
     }

@@ -24,7 +24,7 @@ namespace Data.Mappings
             builder.Property(t => t.Longitude);
 
 
-            builder.ToTable("Enderecos");
+            //builder.ToTable("Enderecos");
 
              
 

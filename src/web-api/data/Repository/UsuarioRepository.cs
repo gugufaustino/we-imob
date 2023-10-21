@@ -16,7 +16,7 @@ namespace Data.Repository
 
         public Task<Usuario> ObterUsuarioLogon(string email)
         {
-            return this.DbSet.Include(i => i.Agencia)
+            return this.DbSet.Include(i => i.Organizacao)
                               .ThenInclude(ae => ae.Empresa)
                               .AsNoTracking()
                               .SingleAsync(i => i.Email.ToLower() == email.ToLower());

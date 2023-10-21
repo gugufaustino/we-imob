@@ -15,8 +15,8 @@ namespace Business.Models
         public string ConfirmPassword { get; set; }
         public string Imagem { get; set; }
         public TipoCadastroEnum  TipoCadastro { get; set; }
-        public int? IdAgencia { get; set; }
-        public Organizacao Agencia { get; set; }
+        public int? IdOrganizacao { get; set; }
+        public Organizacao Organizacao { get; set; }
 
         public string Abreviatura()
         {

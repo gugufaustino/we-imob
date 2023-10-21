@@ -27,7 +27,7 @@ namespace Business.Identity
 			{
 				if (_httpContextAccessor is not null)
 				{
-					var claim = _httpContextAccessor.HttpContext.User.FindFirst(nameof(Usuario.IdAgencia)) ?? default;
+					var claim = _httpContextAccessor.HttpContext.User.FindFirst(nameof(Usuario.IdOrganizacao)) ?? default;
 					return string.IsNullOrEmpty(claim?.Value) ? default : int.Parse(claim.Value);
 				}
 				else

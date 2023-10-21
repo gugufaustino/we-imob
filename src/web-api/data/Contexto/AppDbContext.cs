@@ -12,11 +12,11 @@ namespace Data.Contexto
 
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Endereco> Endereco { get; set; }
         public DbSet<TipoSituacao> TipoSituacao { get; set; }        
-        public DbSet<Organizacao> Agencias { get; set; }
-        public DbSet<Empresa> AgenciasEmpresa { get; set; }
+        public DbSet<Organizacao> Organizacao { get; set; }
+        public DbSet<Empresa> Empresa { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

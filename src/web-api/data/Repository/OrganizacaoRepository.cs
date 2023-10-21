@@ -16,13 +16,13 @@ namespace Data.Repository
   
         public async override Task<List<Organizacao>> ListarTodos()
         {
-            return await Db.Agencias.AsNoTracking()                            
+            return await Db.Organizacao.AsNoTracking()                            
                             .ToListAsync();
         }
 
         public async override Task<Organizacao> ObterPorId(int id)
         {
-            return await Db.Agencias                            
+            return await Db.Organizacao                            
                             .FirstAsync(i => i.Id == id);
         } 
        
