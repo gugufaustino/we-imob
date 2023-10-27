@@ -7,7 +7,7 @@ using Microsoft.OpenApi.Models;
 
 namespace ApiApplication.Configuration
 {
-	public static class ApiConfig
+    public static class ApiConfig
 	{
 		public static IServiceCollection WebApiConfig(this IServiceCollection services, IConfiguration configuration)
 		{
