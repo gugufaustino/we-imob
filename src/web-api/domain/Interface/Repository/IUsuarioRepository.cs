@@ -1,7 +1,7 @@
-﻿using Business.Models;
+﻿using Domain.Models;
 using System.Threading.Tasks;
 
-namespace Business.Interface.Repository
+namespace Domain.Interface.Repository
 {
     public interface IUsuarioRepository : IRepository<Usuario>
     {

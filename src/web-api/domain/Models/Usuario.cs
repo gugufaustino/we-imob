@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Business.Models
+namespace Domain.Models
 {
     public class Usuario : EntityKey
     {

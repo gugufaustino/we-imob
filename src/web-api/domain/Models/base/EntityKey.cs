@@ -1,6 +1,6 @@
-﻿using Business.Interface.Models;
+﻿using Domain.Interface.Models;
 
-namespace Business.Models
+namespace Domain.Models
 {
     public abstract class EntityKey : IEntityKey
     {

@@ -1,7 +1,7 @@
-﻿using Business.Interface.Models;
+﻿using Domain.Interface.Models;
 using System;
 
-namespace Business.Models
+namespace Domain.Models
 {
     public abstract class EntityDateKey : EntityKey, IEntityDates
     {

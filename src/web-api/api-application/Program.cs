@@ -9,7 +9,7 @@ IConfiguration configuration = builder.Configuration;
 
 
 builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddIdentityConfiguration(configuration);
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();

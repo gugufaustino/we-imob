@@ -1,9 +1,9 @@
-﻿using Business.Notifications;
+﻿using Domain.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Business.Interface
+namespace Domain.Interface
 {
 	public interface IBroadcaster
 	{

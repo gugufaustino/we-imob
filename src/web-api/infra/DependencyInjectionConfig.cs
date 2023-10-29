@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Domain.Interface.Repository;
+using Domain.Interface.Services;
+using Data.Contexto;
+using Data.Repository;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Infra.Configuration
 {
@@ -6,10 +10,10 @@ namespace Infra.Configuration
     {
         public static IServiceCollection ResolveDependencies(this IServiceCollection services)
         {
-            //services.AddScoped<AppDbContext>();
+             services.AddScoped<AppDbContext>();
             //services.AddScoped<IBroadcaster, Broadcaster>();
 
-            //services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
             //services.AddScoped<IEnderecoService, EnderecoService>();
             //services.AddScoped<IModeloService, ModeloService>();
             //services.AddScoped<IAgenciaService, AgenciaService>();
@@ -20,7 +24,7 @@ namespace Infra.Configuration
 
 
 
-            //services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             ////services.AddScoped<IUsuarioRepository, UsuarioRepositoryFake>();
             //services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             //services.AddScoped<IModeloRepository, ModeloRepository>();

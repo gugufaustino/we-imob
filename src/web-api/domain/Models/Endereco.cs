@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Business.Models
+namespace Domain.Models
 {
     public class Endereco : EntityKey
     {

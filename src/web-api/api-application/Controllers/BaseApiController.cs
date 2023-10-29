@@ -1,5 +1,5 @@
-﻿using Business.Interface;
-using Business.Notifications;
+﻿using Domain.Interface;
+using Domain.Notifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

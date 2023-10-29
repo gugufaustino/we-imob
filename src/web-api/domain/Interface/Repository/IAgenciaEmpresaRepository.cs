@@ -1,9 +1,9 @@
-using Business.Models;
+using Domain.Models;
 using System;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Business.Interface.Repository
+namespace Domain.Interface.Repository
 {
     public interface IAgenciaEmpresaRepository : IDisposable      
     {

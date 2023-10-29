@@ -1,6 +1,6 @@
-﻿using Business.Interface;
-using Business.Interface.Models;
-using Business.Interface.Repository;
+﻿using Domain.Interface;
+using Domain.Interface.Models;
+using Domain.Interface.Repository;
 using Data.Contexto;
 using Microsoft.EntityFrameworkCore;
 using System;

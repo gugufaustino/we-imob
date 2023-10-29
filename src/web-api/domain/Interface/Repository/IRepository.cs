@@ -1,12 +1,12 @@
-﻿using Business.Interface.Models;
-using Business.Models;
+﻿using Domain.Interface.Models;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Interface.Repository
+namespace Domain.Interface.Repository
 {
     public interface IRepository<TEntity> : IDisposable
         where TEntity : IEntityKey

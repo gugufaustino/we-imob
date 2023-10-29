@@ -1,9 +1,9 @@
-﻿using Business.Interface;
-using Business.Models;
+﻿using Domain.Interface;
+using Domain.Models;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using shared.Util;
-namespace Business.Identity
+namespace Domain.Identity
 {
 	public class User : IUser
 	{

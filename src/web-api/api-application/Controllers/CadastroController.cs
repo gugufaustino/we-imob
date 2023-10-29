@@ -1,10 +1,11 @@
 ﻿using ApiApplication.Extensions;
 using ApiApplication.ViewModel;
 using AutoMapper;
-using Business.Interface;
-using Business.Interface.Repository;
-using Business.Interface.Services;
-using Business.Models;
+using Domain.Interface;
+using Domain.Interface.Repository;
+using Domain.Interface.Services;
+using Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Util;
 
@@ -37,7 +38,8 @@ namespace ApiApplication.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<UsuarioViewModel>> Listar()
+		[AllowAnonymous]
+		public async Task<IEnumerable<UsuarioViewModel>> Listar()
         {
             var lista = await _repository.ListarTodos();
             return _mapper.Map<IEnumerable<UsuarioViewModel>>(lista);
