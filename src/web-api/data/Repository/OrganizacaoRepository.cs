@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data.Repository
 {
-    public class OrganizacaoRepository : Repository<Organizacao>, IAgenciaRepository
+    public class OrganizacaoRepository : Repository<Organizacao>, IOrganizacaoRepository
     {
         public OrganizacaoRepository(AppDbContext appDbContext, IUser user) : base(appDbContext, user)
         {

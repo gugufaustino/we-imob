@@ -4,7 +4,7 @@ using FluentValidation;
 using FluentValidation.Results;
 using Domain.Notifications;
 
-namespace Business.Services
+namespace Services
 {
     public class BaseService
     {

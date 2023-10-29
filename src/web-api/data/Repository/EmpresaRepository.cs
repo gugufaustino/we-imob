@@ -11,7 +11,7 @@ using Domain.Interface;
 
 namespace Data.Repository
 {
-    public class EmpresaRepository : Repository<Empresa>, IAgenciaEmpresaRepository  
+    public class EmpresaRepository : Repository<Empresa>, IEmpresaRepository  
     {
         public EmpresaRepository(AppDbContext appDbContext, IUser user) : base(appDbContext, user)
         {

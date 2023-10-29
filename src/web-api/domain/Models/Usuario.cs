@@ -6,14 +6,15 @@ namespace Domain.Models
 {
     public class Usuario : EntityKey
     {
-        public string Nome { get; set; }
-        public string Apelido { get; set; }
-        public string CPF { get; set; }
-        public string Telefone { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
-        public string Imagem { get; set; }
+        public string Nome { get; set; } = string.Empty;
+
+		public string? Apelido { get; set; }
+        public string CPF { get; set; } = string.Empty;
+        public string Telefone { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string ConfirmPassword { get; set; } = string.Empty;
+        public string? Imagem { get; set; }
         public TipoCadastroEnum  TipoCadastro { get; set; }
         public int? IdOrganizacao { get; set; }
         public Organizacao Organizacao { get; set; }
@@ -35,6 +36,6 @@ namespace Domain.Models
     public enum TipoCadastroEnum
     {
         AgenteAutonomo = 1,
-        AgenciaEmpresa = 2,
+        Empresa = 2,
     }
 }

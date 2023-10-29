@@ -20,14 +20,14 @@ namespace ApiApplication.Controllers
 
         private readonly IUsuarioRepository _repository;
         private readonly IUsuarioService _service;
-        private readonly IAgenciaService _serviceAgencia;
+        private readonly IOrganizacaoService _serviceAgencia;
         private readonly IMapper _mapper;
 
         public CadastroController(IUsuarioRepository repository,
                                   IUsuarioService service,
                                   IMapper mapper,
                                   IBroadcaster broadcaster,
-                                  IAgenciaService serviceAgencia
+                                  IOrganizacaoService serviceAgencia
                                   )
            : base(broadcaster)
         {

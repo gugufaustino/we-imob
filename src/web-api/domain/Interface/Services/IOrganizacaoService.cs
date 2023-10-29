@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interface.Services
 {
-   public interface IAgenciaService : IDisposable
+   public interface IOrganizacaoService : IDisposable
     {
         Task<int> AdicionarAgenciaEmpresa(Organizacao agencia);
         Task Adicionar(Organizacao lstAgencias);

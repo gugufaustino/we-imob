@@ -1,21 +1,20 @@
-﻿using Business.Interface;
-using Business.Interface.Repository;
-using Business.Interface.Services;
-using Business.Models;
+﻿using Domain.Interface;
+using Domain.Interface.Repository;
+using Domain.Interface.Services;
+using Domain.Models;
 using FluentValidation;
-using System.Threading.Tasks;
 
 namespace Services
 {
-    public class UsuarioService : BaseService, IUsuarioService
+	public class UsuarioService : BaseService, IUsuarioService
     {
-        private readonly IAgenciaService _agenciaService;
+        private readonly IOrganizacaoService _agenciaService;
         private readonly IUsuarioRepository _repository;
         private readonly IUser _user;
         private readonly IValidator<Usuario> _validator;
         public UsuarioService(IUsuarioRepository repository,
                                 IBroadcaster broadcaster,
-                                IAgenciaService agenciaService,
+                                IOrganizacaoService agenciaService,
                                 IUser user,
                                 IValidator<Usuario> validator)
             : base(broadcaster)
@@ -32,20 +31,20 @@ namespace Services
 
             if (usuario.TipoCadastro == TipoCadastroEnum.AgenteAutonomo)
             {
-                var agencia = new Agencia(usuario.Nome)
+                var agencia = new Organizacao(usuario.Nome)
                 {
                     TipoSituacao = TipoSituacaoEnum.Ativado
                 };
 
                 await _agenciaService.Adicionar(agencia);
-                usuario.Agencia = agencia;
+                usuario.Organizacao = agencia;
             }
 
             await _repository.Adicionar(usuario);
 
         }
 
-        public async Task AdicionarAgenciaEmpresa(Agencia agenciaEmpresa)
+        public async Task AdicionarAgenciaEmpresa(Organizacao agenciaEmpresa)
         {
 
             agenciaEmpresa.TipoSituacao = TipoSituacaoEnum.EmElaboracao;
@@ -54,7 +53,7 @@ namespace Services
 
 
             var usuario = await _repository.Obter(i => i.Email.ToLower() == _user.Email.ToLower());
-            usuario.Agencia = agenciaEmpresa;
+            usuario.Organizacao = agenciaEmpresa;
 
             await _repository.Editar(usuario);
 

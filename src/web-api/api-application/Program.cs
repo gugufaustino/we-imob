@@ -1,6 +1,7 @@
 using ApiApplication.Configuration;
 using Data.Contexto;
 using Infra.Configuration;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -10,6 +11,7 @@ IConfiguration configuration = builder.Configuration;
 
 builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddIdentityConfiguration(configuration);
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();

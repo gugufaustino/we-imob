@@ -19,8 +19,10 @@ namespace ApiApplication.Configuration
             services.AddDbContext<ApplicationDbContext>(option =>
                 option.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentityCore<IdentityUser>()
-                .AddRoles<IdentityRole>()
+			services.AddIdentity<IdentityUser, IdentityRole>(options =>
+			{
+				options.User.RequireUniqueEmail = false;
+			})  .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                  //.AddErrorDescriber<IdentityErrorDescriberPtBr>()
                 .AddDefaultTokenProviders();

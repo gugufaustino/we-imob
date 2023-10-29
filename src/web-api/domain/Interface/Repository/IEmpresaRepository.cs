@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interface.Repository
 {
-    public interface IAgenciaEmpresaRepository : IDisposable      
+    public interface IEmpresaRepository : IDisposable      
     {
         Task Adicionar(Empresa entity);
 
