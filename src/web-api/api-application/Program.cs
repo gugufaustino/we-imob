@@ -1,7 +1,6 @@
 using ApiApplication.Configuration;
 using Data.Contexto;
 using Infra.Configuration;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -15,27 +14,24 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddSwaggerGen();
 
-builder.Services.WebApiConfig(configuration);  
+builder.Services.WebApiConfig(configuration);
 builder.Services.ResolveDependencies();
 
 var app = builder.Build();
 
 
-
-
 // CONFIGURE the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+	//app.UseMigrationsEndPoint();
+	app.UseCors("Development");
+	app.UseDeveloperExceptionPage();
 	app.UseSwagger();
-	app.UseSwaggerUI();
+	app.UseSwaggerUI(setup => setup.SwaggerEndpoint("/swagger/v1/swagger.json", "Api v1"));
 }
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+app.UseMvcConfiguration();
 
 app.Run();

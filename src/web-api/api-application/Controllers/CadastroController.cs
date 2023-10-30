@@ -20,21 +20,21 @@ namespace ApiApplication.Controllers
 
         private readonly IUsuarioRepository _repository;
         private readonly IUsuarioService _service;
-        private readonly IOrganizacaoService _serviceAgencia;
+        private readonly IOrganizacaoService _serviceOrganizacao;
         private readonly IMapper _mapper;
 
         public CadastroController(IUsuarioRepository repository,
                                   IUsuarioService service,
                                   IMapper mapper,
                                   IBroadcaster broadcaster,
-                                  IOrganizacaoService serviceAgencia
+                                  IOrganizacaoService serviceOrganizacao
                                   )
            : base(broadcaster)
         {
             _repository = repository;
             _service = service;
             _mapper = mapper;
-            _serviceAgencia = serviceAgencia;
+            _serviceOrganizacao = serviceOrganizacao;
         }
 
         [HttpGet]

@@ -39,7 +39,7 @@ namespace Domain.Models
         }
 
         public string Nome { get; set; }
-        public string Instagram { get; set; }
+        public string? Instagram { get; set; }
         public TipoOrganizacaoEnum TipoCadastro { get; set; }
         public TipoSituacaoEnum TipoSituacao { get; set; }
         public Empresa Empresa { get; set; }
