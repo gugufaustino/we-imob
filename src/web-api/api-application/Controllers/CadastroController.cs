@@ -94,13 +94,13 @@ namespace ApiApplication.Controllers
             //return CustomResponse(empresaModel);
         }
 
-        [HttpPost("adicionar-agencia")]
+        [HttpPost("adicionar-organizacao-empresa")]
         [ClaimsAuthorize(Permissao)]
-        public async Task<ActionResult> AdicionarAgenciaEmpresa(EmpresaViewModel empresaModel)
+        public async Task<ActionResult> AdicionarOrganizacaoEmpresa(EmpresaViewModel empresaModel)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _service.AdicionarAgenciaEmpresa(new Organizacao(empresaModel.RazaoSocial,
+            await _service.AdicionarOrganizacaoEmpresa(new Organizacao(empresaModel.RazaoSocial,
                                                         empresaModel.Cnpj.RemoverMascara(),
                                                         empresaModel.NomeFantasia,
                                                         empresaModel.Instagram,
@@ -111,15 +111,18 @@ namespace ApiApplication.Controllers
 
         
         [HttpPut("{id}")]
-        public ActionResult Atualizar(int id, UsuarioViewModel usuarioViewModel)
+        public async Task<ActionResult> Atualizar(int id, UsuarioViewModel usuarioViewModel)
         {
 
             if (id != usuarioViewModel.Id) return BadRequest();
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            //TODO implementar aqui service atualização da entidade
+            var usuario = await _repository.ObterPorId(id);
+            usuario.Telefone = usuarioViewModel.Telefone;
 
-            return CustomResponse();
+			await _repository.Editar(usuario);
+
+			return CustomResponse();
         }
 
         [HttpDelete("{id}")]

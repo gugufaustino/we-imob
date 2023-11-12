@@ -44,7 +44,7 @@ namespace Services
 
         }
 
-        public async Task AdicionarAgenciaEmpresa(Organizacao agenciaEmpresa)
+        public async Task AdicionarOrganizacaoEmpresa(Organizacao agenciaEmpresa)
         {
 
             agenciaEmpresa.TipoSituacao = TipoSituacaoEnum.EmElaboracao;

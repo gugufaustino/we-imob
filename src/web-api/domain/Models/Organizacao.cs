@@ -15,7 +15,7 @@ namespace Domain.Models
         public Organizacao(string nome)
         {
             Nome = nome;
-            TipoCadastro = TipoOrganizacaoEnum.AgenteAutonomo;
+            TipoCadastro = TipoOrganizacaoEnum.AgenteAutonomoCorretor;
         }
 
 		/// <summary>
@@ -26,7 +26,7 @@ namespace Domain.Models
            
             Nome = nomeFantasia;
             Instagram = instagram;
-            TipoCadastro = TipoOrganizacaoEnum.Imobiliaria;
+            TipoCadastro = TipoOrganizacaoEnum.EmpresaImobiliaria;
 
             Empresa = new Empresa
             {
@@ -48,7 +48,7 @@ namespace Domain.Models
 
     public enum TipoOrganizacaoEnum
     {
-        AgenteAutonomo = 1,
-        Imobiliaria = 2,
+        AgenteAutonomoCorretor = 1,
+        EmpresaImobiliaria = 2,
     }
 }

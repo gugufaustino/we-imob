@@ -11,6 +11,6 @@ namespace Domain.Interface.Services
         Task Registrar(Usuario usuario);
         Task<Usuario> ObterUsuarioLogon(string email);
 
-        Task AdicionarAgenciaEmpresa(Organizacao agencia);
+        Task AdicionarOrganizacaoEmpresa(Organizacao agencia);
     }
 }
